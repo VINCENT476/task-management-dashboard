@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Task Management Dashboard</h1>
+            <p>Organise your tasks and stay productive.</p>
+        </header>
+
+        <section class="task-input">
+
+            <input type="text" id="taskInput" placeholder="Enter a new task">
+
+            <select id="taskPriority">
+                
+                <option value="Low">Low Priority</option>
+                <option value="Medium" selected>Medium Priority</option>
+                <option value="High">High Priority</option>
+            </select>
+            <input type="date" id="taskDate">
+            <button id="addTaskBtn">Add Task</button>
+
+        </section>
+
+       <section class="task-summary">
+
+    <div class="summary-card">
+        <h3>Total Tasks</h3>
+        <p id="totalTasks">0</p>
+    </div>
+
+    <div class="summary-card">
+        <h3>Completed</h3>
+        <p id="completedTasks">0</p>
+    </div>
+
+    <div class="summary-card">
+        <h3>Pending</h3>
+        <p id="pendingTasks">0</p>
+    </div>
+
+    <div class="progress-section">
+        <h3>Task Completion Progress</h3>
+
+        <div class="progress-bar">
+            <div id="progressFill"></div>
+        </div>
+
+        <p id="progressText">0% Completed</p>
+    </div>
+
+</section>
+
+        <section class="task-list-section">
+
+            <h2>My Tasks</h2>
+         <input type="text" id="searchInput" placeholder="Search tasks...">
+            <div class="task-filters">
+                <button onclick="filterTasks('all')">All Tasks</button>
+                <button onclick="filterTasks('pending')">Pending</button>
+                <button onclick="filterTasks('completed')">Completed</button>
+            </div>
+            <div class="task-sorting">
+    <label for="sortTasks">Sort Tasks:</label>
+
+    <select id="sortTasks">
+        <option value="default">Default Order</option>
+        <option value="priority">By Priority</option>
+        <option value="date">By Due Date</option>
+    </select>
+</div>
+<button id="clearAllBtn" onclick="clearAllTasks()">
+    Clear All Tasks
+</button>
+            <ul id="taskList"></ul>
+
+        </section>
+      
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
